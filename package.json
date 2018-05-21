@@ -1,6 +1,6 @@
 {
 	"name": "fullscreen-polyfill",
-	"version": "1.0.0-rc.1",
+	"version": "1.0.0",
 	"description": "A simple polyfill implementation of W3C's JavaScript Fullscreen API spec. Don't worry about the vendor specific Fullscreen API.",
 	"license": "MIT",
 	"main": "lib/fullscreen.polyfill.js",
