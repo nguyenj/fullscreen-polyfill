@@ -2,7 +2,7 @@
 
 A simple polyfill implementation of W3C's [JavaScript Fullscreen API](https://fullscreen.spec.whatwg.org/) spec. Don't worry about the vendor specific Fullscreen API.
 
-The vendor specific Fullscreen API is taken from [MDN's JavaScript Fullscreen API table prefixes](https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API#Prefixing).
+The polyfill is created using the vendor specific Fullscreen API from [MDN's JavaScript Fullscreen API table prefixes](https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API#Prefixing).
 
 ## Install
 
