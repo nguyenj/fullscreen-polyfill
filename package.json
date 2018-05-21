@@ -1,0 +1,42 @@
+{
+	"name": "fullscreen-polyfill",
+	"version": "1.0.0-rc.1",
+	"description": "A simple polyfill implementation of W3C's JavaScript Fullscreen API spec. Don't worry about the vendor specific Fullscreen API.",
+	"license": "MIT",
+	"main": "lib/fullscreen.polyfill.js",
+	"files": [
+		"lib"
+	],
+	"author": {
+		"name": "John Nguyen",
+		"email": "hello@jnguyen.me",
+		"url": "http://jnguyen.me/"
+	},
+	"keywords": [
+		"fullscreen",
+		"polyfill",
+		"html5",
+		"browser",
+		"w3c",
+		"standard"
+	],
+	"scripts": {
+		"build": "rm -rf lib/ && rollup -c && mv dist/ lib",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"devDependencies": {
+		"rollup": "^0.59.2",
+		"rollup-plugin-minify-es": "^1.1.1"
+	},
+	"directories": {
+		"lib": "lib"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/nguyenj/fullscreen-polyfill.git"
+	},
+	"bugs": {
+		"url": "https://github.com/nguyenj/fullscreen-polyfill/issues"
+	},
+	"homepage": "https://github.com/nguyenj/fullscreen-polyfill#readme"
+}
