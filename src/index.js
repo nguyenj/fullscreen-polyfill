@@ -50,7 +50,8 @@ const fsVendorKeywords = (function getFullscreenApi () {
 })()
 
 function handleEvent (eventType, event) {
-	document[spec[0]] = document[fsVendorKeywords[0]]
+	document[spec[0]] = document[fsVendorKeywords[0]] ||
+		!!document[fsVendorKeywords[2]] || false
 	document[spec[1]] = document[fsVendorKeywords[1]]
 	document[spec[2]] = document[fsVendorKeywords[2]]
 	document.dispatchEvent(new Event(eventType), event.target)
@@ -58,7 +59,11 @@ function handleEvent (eventType, event) {
 
 function setupShim () {
 	// fullscreen
-	document[spec[0]] = document[fsVendorKeywords[0]]
+	// Defaults to false for cases like MS where they do not have this
+	// attribute. Another way to check whether fullscreen is active is to look
+	// at the fullscreenElement attribute.
+	document[spec[0]] = document[fsVendorKeywords[0]] || 
+		!!document[fsVendorKeywords[2]] || false
 
 	// fullscreenEnabled
 	document[spec[1]] = document[fsVendorKeywords[1]]
