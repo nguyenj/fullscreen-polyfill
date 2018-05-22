@@ -1,4 +1,5 @@
-import minify from 'rollup-plugin-minify-es'
+import { uglify } from 'rollup-plugin-uglify'
+import babel from 'rollup-plugin-babel'
 import pkg from './package.json'
 
 let banner = '/*!\n'
@@ -20,7 +21,8 @@ export default {
 		banner: banner
 	},
 	plugins: [
-		minify({
+		babel(),
+		uglify({
 			output: {
 				comments (node, comment) {
 					const text = comment.value
