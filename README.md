@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/nguyenj/fullscreen-polyfill.svg?branch=master)](https://travis-ci.org/nguyenj/fullscreen-polyfill)
+
 # fullscreen.polyfill.js
 
 A simple polyfill implementation of W3C's [JavaScript Fullscreen API](https://fullscreen.spec.whatwg.org/) spec. Don't worry about the vendor specific Fullscreen API.
