@@ -21,6 +21,7 @@
 		"standard"
 	],
 	"scripts": {
+		"prepublishOnly": "npm run build",
 		"build": "rm -rf lib/ && rollup -c",
 		"test": "karma start karma.conf.js"
 	},
