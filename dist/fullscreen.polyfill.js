@@ -1,6 +1,6 @@
 /*!
  * fullscreen-polyfill
- * 1.0.1 - 5/23/2018
+ * 1.0.2 - 5/23/2018
  * https://github.com/nguyenj/fullscreen-polyfill#readme
  * (c) John Nguyen; MIT License
  */
