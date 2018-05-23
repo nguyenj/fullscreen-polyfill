@@ -46,7 +46,7 @@ const fsVendorKeywords = (function getFullscreenApi () {
 	const fullscreenEnabled = [spec[1], webkit[1], moz[1], ms[1]].find((prefix) => document[prefix])
 	return [spec, webkit, moz, ms].find((vendor) => {
 		return vendor.find((prefix) => prefix === fullscreenEnabled)
-	})
+	}) || []
 })()
 
 function handleEvent (eventType, event) {
