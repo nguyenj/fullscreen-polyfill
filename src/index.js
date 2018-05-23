@@ -52,8 +52,8 @@ const fsVendorKeywords = (function getFullscreenApi () {
 function handleEvent (eventType, event) {
 	document[spec[0]] = document[fsVendorKeywords[0]] ||
 		!!document[fsVendorKeywords[2]] || false
-	document[spec[1]] = document[fsVendorKeywords[1]]
-	document[spec[2]] = document[fsVendorKeywords[2]]
+	document[spec[1]] = document[fsVendorKeywords[1]] || false
+	document[spec[2]] = document[fsVendorKeywords[2]] || null
 	document.dispatchEvent(new Event(eventType), event.target)
 }
 
@@ -66,10 +66,10 @@ function setupShim () {
 		!!document[fsVendorKeywords[2]] || false
 
 	// fullscreenEnabled
-	document[spec[1]] = document[fsVendorKeywords[1]]
+	document[spec[1]] = document[fsVendorKeywords[1]] || false
 
 	// fullscreenElement
-	document[spec[2]] = document[fsVendorKeywords[2]]
+	document[spec[2]] = document[fsVendorKeywords[2]] || null
 
 	// onfullscreenchange
 	document.addEventListener(fsVendorKeywords[3], handleEvent.bind(document, spec[3]), false)
