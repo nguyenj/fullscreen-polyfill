@@ -6,6 +6,6 @@ addons:
   firefox: latest
 language: node_js
 node_js:
-  - 9
+  - 14
 script:
   - npm run test
