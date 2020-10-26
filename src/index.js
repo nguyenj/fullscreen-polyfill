@@ -87,4 +87,4 @@ function setupShim () {
 }
 
 // Don't polyfill if it already exist
-export default document[spec[1]] ? {} : setupShim()
+export default (typeof document[spec[1]] !== 'undefined' || !fsVendorKeywords.length) ? {} : setupShim()
