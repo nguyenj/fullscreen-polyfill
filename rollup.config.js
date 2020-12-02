@@ -1,37 +1,39 @@
-import { uglify } from 'rollup-plugin-uglify'
-import babel from 'rollup-plugin-babel'
-import pkg from './package.json'
+import { terser } from "rollup-plugin-terser";
+import babel from "rollup-plugin-babel";
+import pkg from "./package.json";
 
-let banner = '/*!\n'
-banner += ` * ${pkg.name}\n`
-banner += ` * ${pkg.version} - ${new Intl.DateTimeFormat('en-US').format(Date.now())}\n`
+let banner = "/*!\n";
+banner += ` * ${pkg.name}\n`;
+banner += ` * ${pkg.version} - ${new Intl.DateTimeFormat("en-US").format(
+	Date.now()
+)}\n`;
 if (pkg.homepage) {
-	banner += ` * ${pkg.homepage}\n`
+	banner += ` * ${pkg.homepage}\n`;
 }
-banner += ` * (c) ${pkg.author.name}; ${pkg.license} License\n`
-banner += ' */\n'
+banner += ` * (c) ${pkg.author.name}; ${pkg.license} License\n`;
+banner += " */\n";
 
 export default {
-	input: 'src/index.js',
+	input: "src/index.js",
 	output: {
-		file: 'dist/fullscreen.polyfill.js',
-		format: 'iife',
-		name: 'FullscreenPolyfill',
+		file: "dist/fullscreen.polyfill.js",
+		format: "iife",
+		name: "FullscreenPolyfill",
 		sourcemap: true,
-		banner: banner
+		banner: banner,
 	},
 	plugins: [
 		babel(),
-		uglify({
-			output: {
-				comments (node, comment) {
-					const text = comment.value
-					const type = comment.type
-					if (type === 'comment2') {
-						return /License/ig.test(text)
+		terser({
+			format: {
+				comments(_, comment) {
+					const text = comment.value;
+					const type = comment.type;
+					if (type === "comment2") {
+						return /License/gi.test(text);
 					}
-				}
-			}
-		})
-	]
-}
+				},
+			},
+		}),
+	],
+};
